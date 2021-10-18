@@ -1,0 +1,66 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Lz Compress</h1>
+
+
+    <div class="col-12 text-left">
+
+        <span id="basic-addon1">Original Sources : </span>
+        <div>
+            <form method="post">
+                <textarea class="col-12" rows="10" name="contentSource">@Html.Raw(Model.SourceContent)</textarea>
+
+                <div class="text-right">
+                    <button type="submit" class="btn bg-danger" style="color:white" asp-page-handler="ConvertLzStringCompress" onclick="Submit()">Compress</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-12 text-left" style="margin-top:20px">
+
+        <span id="basic-addon1">To LzString- Compress  Result : </span>
+        <div>
+            <textarea class="col-12" rows="7">@Html.Raw(Model.LzStringContentCompress)</textarea>
+        </div>
+    </div>
+
+
+    <div class="col-12 text-left" style="margin-top:20px">
+
+        <span id="basic-addon1">To LzString- CompressToEncodedURIComponent  Result : </span>
+        <div>
+            <textarea class="col-12" rows="7">@Html.Raw(Model.LzStringContentCompressAndUri)</textarea>
+        </div>
+    </div>
+
+    <div class="col-12 text-left" style="margin-top:20px">
+
+        <span id="basic-addon1">To LzString- CompressToUTF16  Result : </span>
+        <div>
+            <textarea class="col-12" rows="7">@Html.Raw(Model.LzStringContentCompressUTF16)</textarea>
+        </div>
+    </div>
+
+    <div class="col-12 text-left" style="margin-top:20px">
+
+        <span id="basic-addon1">To LzString- CompressToBase64  Result : </span>
+        <div>
+            <textarea class="col-12" rows="7">@Html.Raw(Model.LzStringContentCompressToBase64)</textarea>
+        </div>
+    </div>
+    <div class="col-12 text-left" style="margin-top:20px">
+
+        <span id="basic-addon1">To LzString- ToUint8Array  Result : </span>
+        <div>
+            <textarea class="col-12" rows="7">@Html.Raw(Model.LzStringContentCompressIntArray)</textarea>
+        </div>
+    </div>
+
+    @Html.Raw(Model.ErrorJS)
+</div>

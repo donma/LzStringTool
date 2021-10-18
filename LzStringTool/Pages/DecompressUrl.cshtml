@@ -1,0 +1,34 @@
+﻿@page
+@model LzStringTool.Pages.DecompressUrlModel
+@{
+}
+
+<div class="text-center">
+    <h1 class="display-4">Lz Decompress</h1>
+
+
+    <div class="col-12 text-left">
+
+        <span id="basic-addon1">URL  : </span>
+        <div>
+            <form method="post">
+                <input class="col-12"  name="url" value="@Html.Raw(Model.SourceUrl)"></input>
+
+                <div class="text-right" style="margin-top:10px">
+                    <button type="submit" class="btn bg-success" style="color:white" asp-page-handler="ConvertLzStringDecompress" onclick="Submit()">Decompress</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+    <div class="col-12 text-left" style="margin-top:20px">
+
+        <span id="basic-addon1"> LzString- DecompressFromUrl Result : </span>
+        <div>
+            @Html.Raw(Model.Result.Replace("\n", "<br>").Replace("\r", "<br>"))
+        </div>
+    </div>
+
+    @Html.Raw(Model.ErrorJS)
+</div>
